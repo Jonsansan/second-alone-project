@@ -1,0 +1,29 @@
+/** @format */
+
+.inter-unique {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: italic;
+}
+
+p {
+  font-weight: 200;
+  font-style: italic;
+  color: antiquewhite;
+}
+
+.vignette {
+  display: inline-block; /* Ensures images stay side-by-side */
+  overflow: hidden; /* Prevents the image from overflowing during hover */
+}
+
+.vignette img {
+  transition: transform 1.3s ease, box-shadow 0.3s ease; /* Smooth transition for both transform and shadow */
+}
+
+.vignette img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: inset 0 0 99px rgba(0, 0, 0, 0.5); /* Vignette effect on hover */
+  cursor: pointer; /* Pointer cursor on hover */
+}

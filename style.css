@@ -48,3 +48,15 @@ p {
 .vignette:hover::after {
   opacity: 1;
 }
+
+@media (min-width: 992px) {
+  .vignette {
+    height: 300px; /* Fixed height for large screens */
+  }
+
+  .vignette img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}

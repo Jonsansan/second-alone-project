@@ -1,14 +1,17 @@
 /** @format */
 
+/* Reset and base styles */
 body {
-  background-color: #000000 !important;
+  background-color: #000000;
+  font-family: "Inter", sans-serif;
 }
 
+/* Typography */
 .inter-unique {
-  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: italic;
+  color: #2596be;
 }
 
 p {
@@ -17,15 +20,19 @@ p {
   color: antiquewhite;
 }
 
+/* Image grid and effects */
 .vignette {
-  display: inline-block;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border-radius: 4px;
 }
 
 .vignette img {
-  transition: transform 1.3s ease;
   display: block;
+  width: 100%;
+  transition: transform 0.3s ease;
+  backface-visibility: hidden; /* Optimize performance */
 }
 
 .vignette:hover img {
@@ -35,10 +42,7 @@ p {
 .vignette::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0; /* Shorthand for top, right, bottom, left */
   background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.8) 150%);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -49,14 +53,14 @@ p {
   opacity: 1;
 }
 
+/* Responsive design */
 @media (min-width: 992px) {
   .vignette {
-    height: 300px; /* Fixed height for large screens */
+    height: 300px;
   }
 
   .vignette img {
     height: 100%;
     object-fit: cover;
-    width: 100%;
   }
 }
